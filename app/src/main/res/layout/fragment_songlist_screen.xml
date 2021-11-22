@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="5dp"
+    android:paddingBottom="61dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+
+            android:padding="10dp" android:layout_marginBottom="15dp">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/ivCover"
+            android:src="@drawable/album_cover_drawable"
+            ></ImageView>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+
+            app:layout_constraintLeft_toRightOf="@id/ivCover"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="Playlist"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textStyle="bold"
+            android:id="@+id/tvName"
+            android:gravity="center"></TextView>
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="n bài hát"
+             android:paddingVertical="2dp"
+             android:id="@+id/tvNum"
+             android:fontFamily="sans-serif-condensed-light"
+             android:gravity="center"
+             ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10:00"
+                android:paddingVertical="2dp"
+                android:id="@+id/tvDuration"
+                android:fontFamily="sans-serif-condensed-light"
+                android:gravity="center"
+                ></TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rounded_linear_layout"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="30dp"
+                    android:paddingLeft="20dp"
+                    android:text="Play"
+                    android:id="@+id/tvPlay"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+
+                    android:layout_centerVertical="true"
+
+                    android:drawableLeft="@drawable/icon_start"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    android:layout_toEndOf="@+id/tvPlay">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:contentPadding="10dp"
+                        app:shapeAppearanceOverlay="@style/circle"                            android:tint="@color/colorBlack"
+                        app:tint="@color/colorLightBlack"
+                        android:src="@drawable/icon_favorite"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/darker_gray"></com.google.android.material.imageview.ShapeableImageView>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:contentPadding="10dp"
+                            app:tint="@color/colorLightBlack"
+
+                            app:shapeAppearanceOverlay="@style/circle"
+                            android:src="@drawable/icon_download"
+                            android:scaleType="fitXY"
+                            android:background="@android:color/darker_gray"></com.google.android.material.imageview.ShapeableImageView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:contentPadding="10dp"
+                            app:tint="@color/colorLightBlack"
+
+                            app:shapeAppearanceOverlay="@style/circle"
+                            android:src="@drawable/icon_share"
+                            android:scaleType="fitXY"
+                            android:background="@android:color/darker_gray"></com.google.android.material.imageview.ShapeableImageView>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_marginHorizontal="5dp"
+        android:background="@drawable/shape_rounded_border_recycler"
+        android:id="@+id/screen_recycler">
+    </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:paddingRight="6dp"
+    android:id="@+id/mediaBar"
+
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="6dp"
+        android:padding="6dp"
+        android:id="@+id/media_image"></ImageView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/media_buttonbar"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:id="@+id/media_prev"
+            android:src="@drawable/icon_prev"/>
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/icon_pause"
+            android:id="@+id/media_playpause"/>
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/icon_next"
+            android:id="@+id/media_next"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_toRightOf="@+id/media_image"
+        android:paddingLeft="6dp"
+        android:layout_toLeftOf="@+id/media_buttonbar"
+        android:orientation="vertical"><TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+        android:layout_marginLeft="12dp"
+        android:layout_weight="4"
+            android:id="@+id/media_title"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed-medium"
+
+        android:text="abc"
+            ></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:text="abc"
+            android:gravity="center_vertical"
+
+            android:fontFamily="sans-serif-condensed-light"
+            android:id="@+id/media_artist"
+            ></TextView>
+
+
+    </LinearLayout>
+</RelativeLayout>
+
+    <!--androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        >
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        /></androidx.constraintlayout.widget.ConstraintLayout!-->
+

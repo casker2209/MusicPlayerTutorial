@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EFAE72</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#5B6BC7</color>
+    <color name="song">#8DE7F0</color>
+    <color name="light_blue">#add8e6</color>
+    <color name="colorLightBlack">#383838</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorOrange">#FF7A00</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightOrange">#EFAE72</color>
+    <color name="colorGray">#80FFFFFF</color>
+    <color name="colorLightGray">#DFDDDD</color>
+    <color name="colorLightOrange2">#FFD3AA</color>
+    <color name="colorLightOrange3">#FAEBDC</color>
+    <color name="colorDarkWhite">#F1EFEF</color>
+    <color name="colorLightGray2">#B1B1B1</color>
+    <color name="colorLightBlack2">#888888</color>
+    <color name="colorDiaglog">#4D000000</color>
+</resources>
