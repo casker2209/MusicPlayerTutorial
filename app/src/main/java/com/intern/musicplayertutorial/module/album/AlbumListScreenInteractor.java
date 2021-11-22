@@ -18,7 +18,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class AlbumListScreenInteractor extends BaseInteractor {
 
     public Observable<Song> getSongEntityFromAlbumId(String id){
-        return getApi().getSongbyAlbumID(id).observeOn(AndroidSchedulers.mainThread())
+        return api.getSongbyAlbumID(id).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .flatMap(new Function<SongEntityResponse, ObservableSource<Song>>() {
                     @Override

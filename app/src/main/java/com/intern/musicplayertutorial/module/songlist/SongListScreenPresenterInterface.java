@@ -9,6 +9,4 @@ import java.util.List;
 public interface SongListScreenPresenterInterface extends BasePresenterInterface {
     void setSongList(List<Song> songList);
     void startSongAtPosition(int position);
-
-
 }

@@ -42,11 +42,8 @@ public class SongListScreenFragment extends BaseFragment<SongListScreenView,Song
     TextView albumNum;
     @BindView(R.id.tvPlay)
     TextView playButton;
-
     public SongListScreenFragment() {
-
     }
-
     public static SongListScreenFragment getInstance() {
         return new SongListScreenFragment();
     }
@@ -62,8 +59,6 @@ public class SongListScreenFragment extends BaseFragment<SongListScreenView,Song
         super.onCreate(savedInstanceState);
         mPresenter = new SongListScreenPresenter(this);
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

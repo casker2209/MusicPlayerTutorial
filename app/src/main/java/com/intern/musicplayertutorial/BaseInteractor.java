@@ -4,7 +4,7 @@ import com.intern.musicplayertutorial.api.Api;
 import com.intern.musicplayertutorial.api.RetrofitClient;
 
 public abstract class BaseInteractor {
-    private Api api;
+    protected Api api;
     public Api getApi() {
         return api;
     }

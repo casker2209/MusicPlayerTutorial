@@ -1,5 +1,7 @@
 package com.intern.musicplayertutorial.module;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,38 +25,27 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.HttpException;
 
-public class LoadingActivity extends AppCompatActivity {
-    List<Genre> genreList;
+public class LoadingActivity extends AppCompatActivity implements LoadingView{
+    LoadingPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
+        presenter = new LoadingPresenterImpl(this);
+        presenter.getGenre();
+        getActivity();
+    }
 
-        genreList = new ArrayList<>();
-        Api api = RetrofitClient.getInstance().getMyApi();
-        api.getAllGenres().observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(response ->{
-                    Log.d("Tag",response.toString());
-                    genreList = response.getGenreList();
-                },throwable -> {
-                    Log.e("Throwable","Throwable: "+throwable.getMessage());
-                    if(throwable instanceof HttpException){
-                        HttpException exception = (HttpException) throwable;
-                        Log.e("Error code","Code: "+ exception.code());
-                        //if code = ...
-                        Toast.makeText(this,"There is a problem with internet requests",Toast.LENGTH_SHORT).show();
-                    }
-                    else if(throwable instanceof UnknownHostException){
-                        UnknownHostException exception = (UnknownHostException) throwable;
-                        Toast.makeText(this,"Unknown Host error: "+exception.getCause(),Toast.LENGTH_SHORT).show();
-                    }
-                    finish();
-                },() ->{
-                    Intent intent = new Intent(this, BaseViewImpl.class);
-                    DataHolder.setGenreList(genreList);
-                    startActivity(intent);
-                    finish();
-                });
+
+    @Override
+    public Context getActivity() {
+        return this;
+    }
+
+    @Override
+    public void startNewActivity() {
+        Intent intent = new Intent(this, BaseViewImpl.class);
+        startActivity(intent);
+        finish();
     }
 }

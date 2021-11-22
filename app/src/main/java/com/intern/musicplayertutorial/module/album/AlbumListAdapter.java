@@ -63,51 +63,5 @@ public class AlbumListAdapter extends BaseFragmentAdapter<AlbumListScreenFragmen
             });
         }
 
-    /*public AlbumListAdapter(Context context, List<Album> albumList,
-                            AlbumListScreenFragment fragment){
-        this.context = context;
-        this.albumList = albumList;
-        this.fragment = fragment;
-    }
-    @NonNull
-    @Override
-    public AlbumListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.item_genre_card,parent,false);
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull AlbumListAdapter.ViewHolder holder, int position) {
-        Album album = albumList.get(position);
-        holder.tvName.setText(album.getName());
-        Glide.with(context).load(album.getPictureUrl())
-                .centerCrop()
-                .into(holder.ivImage);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragment.getPresenter().getSongByAlbumId(album.getId(),album);
-            }
-        });
-    }
-
-
-
-    @Override
-    public int getItemCount() {
-        return albumList.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        @BindView(R.id.genre_image)
-        ImageView ivImage;
-        @BindView(R.id.genre_name)
-        TextView tvName;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            ButterKnife.bind(this,itemView);
-        }
-    }*/
     }
 }

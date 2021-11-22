@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 
@@ -66,4 +67,5 @@ public interface BaseView extends LifecycleOwner {
     void updateSongAdapter();
     void updateArtistAdapter();
     void updateAlbumAdapter();
+    Context getApplicationContext();
 }

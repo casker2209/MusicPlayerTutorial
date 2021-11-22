@@ -18,12 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SongListScreenPresenter extends BasePresenter<SongListScreenFragment,SongListScreenInteractor,Song,SongListScreenPresenterInterface> implements SongListScreenPresenterInterface {
-
     List<Song> songList;
     public SongListScreenPresenter(SongListScreenFragment fragment) {
         super(fragment,new SongListScreenInteractor());
     }
-
     public void setSongList(List<Song> songList) {
         this.songList = songList;
     }

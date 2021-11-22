@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class ArtistListScreenInteractor extends BaseInteractor{
     public Observable<AlbumResponse> getAlbumsfromArtistId(String id){
-        return getApi().getAlbumbyArtistID(id).observeOn(AndroidSchedulers.mainThread())
+        return api.getAlbumbyArtistID(id).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }
 }

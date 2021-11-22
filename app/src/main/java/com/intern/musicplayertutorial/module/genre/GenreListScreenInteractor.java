@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class GenreListScreenInteractor extends BaseInteractor {
     public Observable<ArtistResponse> getArtistFromGenreId(String id){
-        return getApi().getArtistbyGenreID(id).observeOn(AndroidSchedulers.mainThread())
+        return api.getArtistbyGenreID(id).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io());
     }
 }

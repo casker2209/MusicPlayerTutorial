@@ -43,17 +43,17 @@ public class BaseViewInteractor extends BaseInteractor {
     }
 
     Observable<ResponseBody> getSongFromQuery(String query){
-       return getApi().getSongbyQuery(query).observeOn(AndroidSchedulers.mainThread())
+       return api.getSongbyQuery(query).observeOn(AndroidSchedulers.mainThread())
                .subscribeOn(Schedulers.io());
    }
    Observable<AlbumResponse> getAlbumfromQuery(String query){
-       return getApi().getAlbumbyQuery(query).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io());
+       return api.getAlbumbyQuery(query).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io());
    }
    Observable<ArtistResponse> getArtistfromQuery(String query){
-       return getApi().getArtistbyQuery(query).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io());
+       return api.getArtistbyQuery(query).observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io());
    }
     public Observable<Song> getSongFromAlbumId(String id){
-        return getApi().getSongbyAlbumID(id).observeOn(AndroidSchedulers.mainThread())
+        return api.getSongbyAlbumID(id).observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .flatMap(new Function<SongEntityResponse, ObservableSource<Song>>() {
                     @Override
@@ -70,9 +70,9 @@ public class BaseViewInteractor extends BaseInteractor {
                 });
     }
     Observable<SongEntityResponse> getSongfromArtistId(String id){
-       return getApi().getSongbyAlbumID(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+       return api.getSongbyAlbumID(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
     Observable<AlbumResponse> getAlbumfromArtist(String id){
-       return getApi().getAlbumbyArtistID(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+       return api.getAlbumbyArtistID(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 }

@@ -43,7 +43,6 @@ public class RetrofitClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .client(okHttpClient)
-
                 .build();
         myApi = retrofit.create(Api.class);
     }

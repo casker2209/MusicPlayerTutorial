@@ -166,7 +166,6 @@ public class MediaManager implements Serializable {
     }
 
     public MutableLiveData<Boolean> isPlaying() {
-        Log.d("Playing or not", String.valueOf(mediaPlayer.isPlaying()));
         return isPlaying;
     }
 
