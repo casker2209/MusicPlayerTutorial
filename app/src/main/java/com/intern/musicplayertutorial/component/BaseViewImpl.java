@@ -30,6 +30,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.intern.musicplayertutorial.BaseAdapter;
 import com.intern.musicplayertutorial.BaseFragment;
 import com.intern.musicplayertutorial.ConstantsUtil;
 import com.intern.musicplayertutorial.R;
@@ -264,17 +265,17 @@ public class BaseViewImpl extends AppCompatActivity implements BaseView {
 
     @Override
     public List<Song> getSongList() {
-        return ((SearchSongAdapter) songRecycler.getAdapter()).getSongList();
+        return ((BaseAdapter<Song>) songRecycler.getAdapter()).getList();
     }
 
     @Override
     public List<Album> getAlbumList() {
-        return ((SearchAlbumAdapter) albumRecycler.getAdapter()).getObjectList();
+        return ((BaseAdapter<Album>) albumRecycler.getAdapter()).getList();
     }
 
     @Override
     public List<Artist> getArtistList() {
-        return ((SearchArtistAdapter) artistRecycler.getAdapter()).getObjectList();
+        return ((BaseAdapter<Artist>) artistRecycler.getAdapter()).getList();
     }
 
     @Override

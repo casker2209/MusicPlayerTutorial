@@ -5,19 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.intern.musicplayertutorial.BaseFragment;
 import com.intern.musicplayertutorial.DataHolder;
 import com.intern.musicplayertutorial.R;
-import com.intern.musicplayertutorial.module.genre.GenreListAdapter;
 import com.intern.musicplayertutorial.object.Artist;
-import com.intern.musicplayertutorial.object.Genre;
-
-import java.io.Serializable;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,7 +23,6 @@ public class ArtistListScreenFragment extends BaseFragment<ArtistListScreenView,
     @BindView(R.id.screen_recycler)
     RecyclerView screenRecycler;
 
-    Unbinder unbinder;
 
     public ArtistListScreenFragment() {
 

@@ -167,17 +167,13 @@ public class MusicSongActivity extends AppCompatActivity implements SeekBar.OnSe
     }
     @Override
     public void setProgressText(int progress){
-        tvProgress.setText(convertMs(progress));
+        tvProgress.setText(musicSongPresenter.convertMs(progress));
         seekBar.setProgress(progress);
     }
-    @Override
-    public String convertMs(int ms){
-        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
-        return sdf.format(ms);
-    }
+
     @Override
     public void setDurationText(Integer integer) {
-        tvDuration.setText(convertMs(integer));
+        tvDuration.setText(musicSongPresenter.convertMs(integer));
         seekBar.setMax(integer);
     }
     @Override

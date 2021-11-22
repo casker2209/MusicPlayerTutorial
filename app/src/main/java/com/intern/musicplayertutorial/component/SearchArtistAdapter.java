@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.intern.musicplayertutorial.BaseAdapter;
 import com.intern.musicplayertutorial.R;
 import com.intern.musicplayertutorial.api.Api;
 import com.intern.musicplayertutorial.api.RetrofitClient;
@@ -22,9 +23,53 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchArtistAdapter extends RecyclerView.Adapter<SearchArtistAdapter.ViewHolder> {
+public class SearchArtistAdapter extends BaseAdapter<Artist> {
+    public SearchArtistAdapter(Context context, List<Artist> list) {
+        super(context, list);
+    }
 
-    private BaseViewImpl context;
+    @Override
+    protected int getLayoutId() {
+        return R.layout.item_search_card;
+    }
+
+    @Override
+    protected BaseHolder getHolder(View view) {
+        return new ViewHolder(view);
+    }
+
+    public class ViewHolder extends SearchArtistAdapter.BaseHolder{
+        @BindView(R.id.ivImage)
+        ImageView ivImage;
+        @BindView(R.id.tvName)
+        TextView tvName;
+        @BindView(R.id.tvContent)
+        TextView tvContent;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+
+        @Override
+        protected void initData(int position) {
+            Artist artist = list.get(position);
+            String name = artist.getName();
+            String imageURL = artist.getPictureUrl();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getBaseActivity().getmPresenter().getAlbumListFragment(artist.getId());
+                    getBaseActivity().setIconified();
+                    getBaseActivity().slideDown();
+
+                }
+            });
+            tvContent.setVisibility(View.GONE);
+            tvName.setText(name);
+            Glide.with(context).load(imageURL).into(ivImage);
+        }
+    }
+
+    /*private BaseViewImpl context;
     List<Artist> objectList;
     public SearchArtistAdapter(Context context, List<Artist> objectList) {
         this.context = (BaseViewImpl) context;
@@ -79,5 +124,5 @@ public class SearchArtistAdapter extends RecyclerView.Adapter<SearchArtistAdapte
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
-    }
+    }*/
 }

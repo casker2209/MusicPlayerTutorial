@@ -21,7 +21,6 @@ public interface MusicSongActivityInterface extends LifecycleOwner {
 
     void setProgressText(int progress);
 
-    String convertMs(int ms);
 
     void setDurationText(Integer integer);
 

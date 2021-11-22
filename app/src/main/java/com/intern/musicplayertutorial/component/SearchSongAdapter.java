@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.intern.musicplayertutorial.BaseAdapter;
 import com.intern.musicplayertutorial.ConstantsUtil;
 import com.intern.musicplayertutorial.media.MediaPlayerService;
 import com.intern.musicplayertutorial.module.musicsong.MusicSongActivity;
@@ -27,10 +28,51 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchSongAdapter extends RecyclerView.Adapter<SearchSongAdapter.ViewHolder> {
-    private BaseViewImpl context;
-    List<Song> objectList;
-    public SearchSongAdapter(Context context, List<Song> objectList) {
+public class SearchSongAdapter extends BaseAdapter<Song> {
+    public SearchSongAdapter(Context context, List<Song> list) {
+        super(context, list);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.item_search_card;
+    }
+
+    @Override
+    protected BaseHolder getHolder(View view) {
+        return new ViewHolder(view);
+    }
+    public class ViewHolder extends SearchSongAdapter.BaseHolder{
+        @BindView(R.id.ivImage)
+        ImageView ivImage;
+        @BindView(R.id.tvName)
+        TextView tvName;
+        @BindView(R.id.tvContent)
+        TextView tvContent;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+
+        @Override
+        protected void initData(int position) {
+            Song song = list.get(position);
+            String name = song.getTitle();
+            String content = song.getArtist().getName();
+            String imageURL = song.getArtist().getPictureUrl();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getBaseActivity().getmPresenter().startSongFromSearchView(song);
+
+                }
+            });
+            tvContent.setText(content);
+            tvName.setText(name);
+            Glide.with(context).load(imageURL).into(ivImage);
+        }
+    }
+
+   /* public SearchSongAdapter(Context context, List<Song> objectList) {
         this.context = (BaseViewImpl) context;
         this.objectList = objectList;
     }
@@ -79,5 +121,5 @@ public class SearchSongAdapter extends RecyclerView.Adapter<SearchSongAdapter.Vi
             super(itemView);
             ButterKnife.bind(this,itemView);
         }
-    }
+    }*/
 }

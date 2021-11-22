@@ -30,7 +30,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 public class SongListScreenFragment extends BaseFragment<SongListScreenView,SongListScreenPresenter,Song,Album> implements View.OnClickListener, SongListScreenView {
-    Unbinder unbinder;
     @BindView(R.id.screen_recycler)
     RecyclerView screenRecycler;
     @BindView(R.id.ivCover)
@@ -43,10 +42,6 @@ public class SongListScreenFragment extends BaseFragment<SongListScreenView,Song
     TextView albumNum;
     @BindView(R.id.tvPlay)
     TextView playButton;
-
-
-
-
 
     public SongListScreenFragment() {
 

@@ -28,7 +28,6 @@ public class AlbumListScreenFragment extends BaseFragment<AlbumListScreenView,Al
     @BindView(R.id.screen_recycler)
     RecyclerView screenRecycler;
 
-    Unbinder unbinder;
 
     public AlbumListScreenFragment(){}
 
@@ -51,8 +50,8 @@ public class AlbumListScreenFragment extends BaseFragment<AlbumListScreenView,Al
         unbinder = ButterKnife.bind(this,view);
         screenRecycler.setAdapter(new AlbumListAdapter(getContext(),List,this));
         screenRecycler.setLayoutManager(new GridLayoutManager(getContext(),2));
-
-        return view;    }
+        return view;
+    }
 
 
 

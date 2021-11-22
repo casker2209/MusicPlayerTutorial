@@ -38,4 +38,6 @@ public interface MusicSongPresenterInterface {
     void onSeekBarChanged(int progress);
 
     void startService(Intent intent);
+
+    String convertMs(int ms);
 }

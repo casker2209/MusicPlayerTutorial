@@ -67,7 +67,6 @@ public abstract class BaseAdapter<O> extends RecyclerView.Adapter<BaseAdapter.Ba
             ButterKnife.bind(this,itemView);
         }
 
-        protected abstract void initView();
 
 
         protected abstract void initData(int position);

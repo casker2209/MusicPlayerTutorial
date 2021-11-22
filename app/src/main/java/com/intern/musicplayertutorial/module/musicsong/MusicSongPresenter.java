@@ -10,6 +10,7 @@ import com.intern.musicplayertutorial.ConstantsUtil;
 import com.intern.musicplayertutorial.media.MediaPlayerService;
 import com.intern.musicplayertutorial.object.Song;
 
+import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -163,5 +164,10 @@ public class MusicSongPresenter implements MusicSongPresenterInterface {
     @Override
     public void startService(Intent intent) {
         ((Context) musicSongActivity).startService(intent);
+    }
+    @Override
+    public String convertMs(int ms){
+        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
+        return sdf.format(ms);
     }
 }

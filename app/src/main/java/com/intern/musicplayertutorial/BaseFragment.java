@@ -6,11 +6,13 @@ import com.intern.musicplayertutorial.component.BaseViewImpl;
 
 import java.util.List;
 
+import butterknife.Unbinder;
+
 public abstract class BaseFragment<I extends BaseInterfaceView,P extends BasePresenterInterface,O1,O2> extends Fragment{
     protected P mPresenter;
     protected List<O1> List;
     protected O2 object;
-
+    protected Unbinder unbinder;
     public BaseFragment(){};
 
     public java.util.List<O1> getList() {
